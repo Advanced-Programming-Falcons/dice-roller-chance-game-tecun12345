@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 #include "dice.hpp"
-int Num;
+
 
 int main(void){
     const int sWidth = 1000;
@@ -11,12 +11,14 @@ int main(void){
 
     SetTargetFPS(60);
     srand(time(0));
+
+    Dice die(6);
    
     std::string message = "Press Space to roll";
     while(!WindowShouldClose()){
         if (IsKeyPressed(KEY_SPACE)){
-            message = "rolled, roll again with space"
-             Num = rand() % 6;
+            int side = die.roll();
+            message = "rolled " + std::to_string(side) + ", roll again with space";
         }
         BeginDrawing();
 

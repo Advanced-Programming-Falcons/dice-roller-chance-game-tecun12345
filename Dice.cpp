@@ -1,17 +1,12 @@
-#include <iostream>
+
 #include <cstdlib> //for rand()
-#include <ctime>
-using namespace std;
+#include "Dice.hpp"
 
-class dice{
-    public:
-        int sides;
-
-        dice(int sd){
-            sd = sides;
+        Dice::Dice(int sides){
+            this->sides = sides;
         }
 
-        int roll(){
-        return rand() % sides + 1;
+        int Dice::roll(){
+        this->num = rand() % sides + 1;
+        return this->num;
         }
-};
