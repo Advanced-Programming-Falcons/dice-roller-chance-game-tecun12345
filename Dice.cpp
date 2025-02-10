@@ -6,7 +6,7 @@
             this->sides = sides;
         }
 
-        int Dice::roll(){
+        int Dice::Roll(){
         this->num = rand() % sides + 1;
         return this->num;
         }
